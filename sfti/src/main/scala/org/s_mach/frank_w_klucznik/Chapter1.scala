@@ -6,8 +6,12 @@ package org.s_mach.frank_w_klucznik
 object Chapter1 {
 
   def question1():Unit = {
-    //Did not understand this question at all. Could not get "type 3" to tell me anything.
-    //Let's discuss.
+    /** Took a look at this one again. I missed the "." in the line.
+      * Answer:  %, &, *, +, -, /, >, >=, >>, >>>, ^, asInstanceOf, isInstanceOf,
+      * toByte, toChar, toDouble, toFloat, toInt, toLong, toShort, toString, unary_+,
+      * unary_~, and |
+      * Got it.
+      */
   }
 
   def question2():Unit = {
