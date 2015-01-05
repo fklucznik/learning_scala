@@ -12,13 +12,18 @@ object Chapter2 {
 
     object function extends App {
 
-      def signum (x:Double) : Int = {
-        if(x == 0) {0
-        }else if(x < 0) {-1
-        }else {1
+      def signum(x: Double): Int = {
+        if (x == 0) {
+          0
+        } else if (x < 0) {
+          -1
+        } else {
+          1
         }
       }
+
       println(signum(123456))
+    }
   }
 
   def question2():Unit = {
@@ -146,9 +151,36 @@ object Chapter2 {
     }
 
     def question9():Unit = {
+
+      println("question9!")
       /**
        * Make the function of the preceding exercise a recursive function.
        */
+
+      object Recursive extends App{
+
+        def product (ch:String) : Int = {
+          def loop (index:Int, product:Int ) : Int = {
+            println(s"Loop => index=$index product=$product")
+            if(index <= ch.indices.last) {
+                val tmp = ch.charAt(index).toInt
+                loop(index+1, tmp * product)
+            } else {
+                product
+            }
+          }
+
+          loop (0,1)
+
+        }
+
+
+
+
+      }
+
+
+
     }
 
     def question10():Unit = {

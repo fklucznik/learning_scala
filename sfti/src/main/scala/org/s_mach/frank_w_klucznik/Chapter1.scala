@@ -165,7 +165,7 @@ object Chapter1 {
      *
      * Drop, Take, etc. are all in the list class for immutable linked lists representing
      * ordered collections of elements of type. These functions do not have any designed
-     * compatibility w/ Java. Suspect they extend or compliment the Jave substring functions.
+     * compatibility w/ Java. Suspect they extend or compliment the Java substring functions.
       */
   }
 }
