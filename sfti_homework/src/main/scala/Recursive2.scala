@@ -3,39 +3,26 @@
  */
 object Recursive2 extends App {
 
-  def power(x: Int, n: Int) {
+  def power(x: Double, n: Int) : Double = {
 
     if (n == 0) {
       //Use case n = 0
-      println(s"ANS: 1")
+         1.0
     } else if (n < 0) {
       //Use case n is negative
-      println(s"n is negative")
-      loop(n, x)
+         power(1.0 / x, n * -1)
+
     } else if (n % 2 == 0) {
       //Use case n is positive and even
-      println(s"n is positive and even")
-      loop(n, 1)
+         val y = power(x, n / 2)
+         y * y
     } else {
       //Use case n is positive and odd
-      println(s"n is positive and odd")
-      loop(n, 1)
+         x * power(x, n - 1)
     }
-
-    //calculate power recursively
-    def loop(count: Int, product: Int) {
-      println(s"Loop Input => count $count product $product")
-      if (count > 0) {
-        loop(count - 1, x * product)
-      } else {
-        println(s"ANS: $product")
-      }
-    }
-
-
   }
-  //power(5, 4)
-
+  println(power(5.0, -4))
+/**
   def power2(x: Double, n: Int) : Double = {
 
     n match {
@@ -49,7 +36,7 @@ object Recursive2 extends App {
         x * power2(x, n - 1)
     }
   }
-  println(power2(5.0, 3))
+  //println(power2(5.0, 3)) */
 }
 
 

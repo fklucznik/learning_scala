@@ -185,6 +185,27 @@ object Chapter2 {
       /**
        * Make a function that computes Xn, where n is an integer. Use the following recursive definition.
        */
+      def power(x: Double, n: Int) : Double = {
+
+        if (n == 0) {
+          //Use case n = 0
+          1.0
+        } else if (n < 0) {
+          //Use case n is negative
+          power(1.0 / x, n * -1)
+
+        } else if (n % 2 == 0) {
+          //Use case n is positive and even
+          val y = power(x, n / 2)
+          y * y
+        } else {
+          //Use case n is positive and odd
+          x * power(x, n - 1)
+        }
+      }
+      println(power(5.0, -4))
+
     }
+
 
 }
