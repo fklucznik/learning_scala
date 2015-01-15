@@ -1,7 +1,7 @@
 /**
   * Created by frank on 12/22/14.
   */
-object function extends App {
+object Function extends App {
 
    def signum (x:Double) : Int = {
      if(x == 0) {0

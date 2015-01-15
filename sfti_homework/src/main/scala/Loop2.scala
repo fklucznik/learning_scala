@@ -1,7 +1,7 @@
 /**
  * Created by frank on 12/22/14.
  */
-object loop2 extends App {
+object Loop2 extends App {
 
   countdown(20)
 

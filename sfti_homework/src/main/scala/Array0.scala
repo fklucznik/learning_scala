@@ -1,7 +1,11 @@
 /**
  * Created by frank on 12/20/14.
  */
-object array extends App {
+
+import scala.collection.mutable._
+
+object Array0 extends App {
+
   val b = Array(1, 7, 2, 9)
   val bsorted = b.sortWith(_ < _)
   val total = Array(1, 7, 2, 9).sum

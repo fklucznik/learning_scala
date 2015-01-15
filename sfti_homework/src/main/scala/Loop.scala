@@ -1,7 +1,7 @@
 /**
  * Created by frank on 12/22/14.
  */
-object loop extends App{
+object Loop extends App{
   /** Java algorithm:  for (int i = 10; i >= 0; i--) System.out.println(i);
     * Scala While loop equivalent
     */

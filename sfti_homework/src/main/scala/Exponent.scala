@@ -1,7 +1,7 @@
 /**
  * Created by frank on 12/20/14.
  */
-object exponent extends App {
+object Exponent extends App {
   var x: BigInt = 2
   var count: Int = 9
 

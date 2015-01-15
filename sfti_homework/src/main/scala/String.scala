@@ -1,7 +1,7 @@
 /**
  * Created by frank on 12/20/14.
  */
-object string extends App {
+object String extends App {
   val stringVal = "Elizabeth River Tunnels"
   var len = stringVal.length()
 

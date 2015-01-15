@@ -16,4 +16,35 @@ object Chapter3 {
     b ++= 1 to 10 map {_ => r.nextInt(100)}
   }
 
+  def question2() :Unit = {
+
+    // Write a loop that swaps adjacent elements of an array of integers
+
+    var a = Array(66,67,68,69,70,71,72,73)
+
+    for (x <- a) {
+      println(x)
+    }
+
+    var count = 0
+    for (count <- 0 until (a.size, 2)) {
+
+
+      if ((count + 1) < a.size) {
+
+        //Save Array Values
+        val first = a(count)
+        val second = a(count + 1)
+        //Reassign Values
+        a(count) = second
+        a(count + 1) = first
+
+      }
+
+    }
+
+    for (x <- a) {
+      println(x)
+    }
+  }
 }

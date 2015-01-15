@@ -1,7 +1,7 @@
 /**
  * Created by frank on 12/20/14.
  */
-object sqrt extends App {
+object Sqrt extends App {
   def x: Double = 3.0
   def y: Double = 2.0
   var count: Int = 2
