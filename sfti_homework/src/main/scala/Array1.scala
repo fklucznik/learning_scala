@@ -1,32 +1,19 @@
 /**
  * Created by frank on 1/15/15.
  */
+import scala.collection._
 object Array1 extends App {
 
-var a = Array(66,67,68,69,70,71,72,73)
+var a = Array(66,67,68,69,70,71,72,73,74,80)
 
  for (x <- a) {
-    println(x)
-  }
+   println(x)
+ }
 
- var count = 0
-  for (count <- 0 until (a.size, 2)) {
+val result = for (count <- 0 until (a.size, 2)) yield
+{if ((count + 1) < a.size) (a(count + 1), a(count)) else a(count)}
 
-
-    if ((count + 1) < a.size) {
-
-      //Save Array Values
-      val first = a(count)
-      val second = a(count + 1)
-      //Reassign Values
-      a(count) = second
-      a(count + 1) = first
-
-    }
-
-  }
-
-  for (x <- a) {
+  for (x <- result) {
     println(x)
   }
 }
