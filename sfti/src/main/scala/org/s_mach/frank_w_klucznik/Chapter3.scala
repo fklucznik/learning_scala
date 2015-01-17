@@ -126,9 +126,38 @@ object Chapter3 {
   }
 
   def question8() :Unit = {
-    //Rewrite the example at the end of Section 4 using teh drop method for dropping
-    //the index of the first match.
+    /** Rewrite the example at the end of Section 3.4.
+      * Collect the indexes of the negative elements. reverse the sequence, drop the last
+      * last index, and call a.remove(i) for each index.  Compare the efficiency of this
+      * approach with the two approaches in Section 3.4.
+      */
+    import scala.collection.mutable.ArrayBuffer
 
+    //Generate ArrayBuffer
+    var a = ArrayBuffer(66,-67,68,-9,70,71,-72,73,-74,80)
+
+    //Capture index of all negative numbers in order
+    var negIndexes = for(i <- 0 until a.size if (a(i) <= 0)) yield i
+
+    //Reverse the index of negative numbers; not sure why...not needed.
+    //The index we are interested in is negIndexes(0)
+    negIndexes = negIndexes.reverse
+
+    //Remove all negative number indexes except the one of interest
+    negIndexes = negIndexes.drop(negIndexes.size -1)
+
+    //Move the first negative number in the sequence to the head
+    a(0) = a(negIndexes(0))
+
+    //Delete all other values in the ArrayBuffer except the first negative number
+    a.trimEnd(a.size - 1)
+
+    //Print result
+    for (x <- a) {
+      println(x)
+    }
+
+    //Less looping in this code. More efficient.
 
 
   }
