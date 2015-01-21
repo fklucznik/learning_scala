@@ -197,9 +197,28 @@ object Chapter3 {
   }
 
   def question10() :Unit = {
+    /** Import java.awt.datatransfer._ and make an object of type SystemFlavorMap with
+      * the call val flavors = SystemFlavorMap.getDefaultFlavorMap().asInstanceOf[SystemFlavorMap]
+      * Then call the getNativesForFalvor method with parameter DataFlavor.imageFlavor and get teh
+      * return value as a Scala buffer.
+       */
 
+    import java.awt.datatransfer._
+    import collection.mutable.Buffer
+    import scala.collection.JavaConversions._
 
+    /**
+     * Created by frank on 1/20/15.
+     */
+    object FlavorMap extends App {
 
+      val flavors = SystemFlavorMap.getDefaultFlavorMap().asInstanceOf[SystemFlavorMap]
+
+      val natives: Buffer[String] = flavors.getNativesForFlavor(DataFlavor.imageFlavor)
+
+      println(natives)
+
+    }
 
 
   }
