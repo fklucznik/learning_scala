@@ -7,11 +7,18 @@ object Chapter4 {
 
   def question1():Unit = {
     /**
-      *
-      */
+     * Set up a map of gizmos you covet. Produce a second map w/ the same keys and prices at a 10 discount
+     */
 
-
-
+    val items = scala.collection.immutable.Map("Car" -> 10000.00, "Computer" -> 1000.00, "TV" -> 3000.00)
+    //Print initial map to verify contents
+    for ((k,v) <- items) println(k,v)
+    //Create new empty map val
+    val itemsDiscounted = scala.collection.mutable.Map[String, Double]()
+    //Add values
+    for ((a,b) <- items) itemsDiscounted += (a -> (b - (b * 0.10)))
+    //Print results
+    for ((k,v) <- itemsDiscounted) println(k,v)
   }
 
 
