@@ -9,8 +9,8 @@ object Maps extends App {
    */
 
 
-  val in = new Scanner(java.io.File("myfile.text"))
-  while (in.hasNext()) println(in.next())
+ // val in = new Scanner(java.io.File("myfile.text"))
+ // while (in.hasNext()) println(in.next())
 
 
   /**
