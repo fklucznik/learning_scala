@@ -1,9 +1,6 @@
 package org.s_mach.frank_w_klucznik
 
-import _root_.java.io.File
-import _root_.java.io.File
-import _root_.java.util.Scanner
-import _root_.java.util.Scanner
+import java.util.{Calendar, Scanner}
 
 /**
  * Created by frank on 1/20/15.
@@ -103,7 +100,6 @@ object Chapter4 {
      *  Same thing but sort words by alpha
      */
 
-    import scala.collection.immutable._
     import java.io._
     import java.util._
     import scala.collection.mutable.ArrayBuffer
@@ -130,7 +126,7 @@ object Chapter4 {
     //Map unique strings and count
     words = mapped.groupBy(l => l).map(t => (t._1, t._2.length))
 
-    //
+    //Create immutable ListMap
     var finalWord = scala.collection.immutable.ListMap[String,Int]()
 
     //Sort map by words
@@ -153,9 +149,7 @@ object Chapter4 {
      * groupBy mapping was to complex in Java. Found several examples...none were simple enough
      * to try to incorporate into the program above.
      */
-
-
-
+    
   }
 
   def question6():Unit = {
@@ -163,8 +157,18 @@ object Chapter4 {
      * Define a linked hash map that maps "Monday" to java.util.Calendar.Monday. Do same for other
      * weekdays.  Demonstrate that all elements are visited in insertion order.
      */
+    import java.util.Calendar
 
+    val days = collection.mutable.LinkedHashMap(
+      "SUNDAY" -> Calendar.SUNDAY,
+      "MONDAY" -> Calendar.MONDAY,
+      "TUESDAY" -> Calendar.TUESDAY,
+      "WEDNESDAY" -> Calendar.WEDNESDAY,
+      "THURSDAY" -> Calendar.THURSDAY,
+      "FRIDAY" -> Calendar.FRIDAY,
+      "SATURDAY" -> Calendar.SATURDAY)
 
+    for((a, b) <- days) println(a, b)
 
   }
 

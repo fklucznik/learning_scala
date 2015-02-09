@@ -46,7 +46,8 @@ object Maps extends App {
   val mapped = temp.toSeq
 
   //Create mutable map
-  var words = TreeMap[String, Integer]()
+  //var words = TreeMap[String, Integer]()
+  var words = scala.collection.immutable.Map[String, Int]()
 
   //Map unique strings and count
   words = mapped.groupBy(l => l).map(t => (t._1, t._2.length))
