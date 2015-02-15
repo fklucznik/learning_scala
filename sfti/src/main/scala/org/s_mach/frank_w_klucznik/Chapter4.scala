@@ -208,7 +208,20 @@ object Chapter4 {
      * the smallest and largest value in an array.
      */
 
+    //Define Array
+    val s = Array(1, 4, 23, 65, 2, 32, 87,  66, 7)
+    //Sort Array
+    val sSorted = s.sortWith(_ < _)
 
+
+    //Function that takes an Array and returnes the min / max values
+    def minmax(values: Array[Int]) : (Int, Int) = {
+      val minNumber = values.head
+      val maxNumber = values(values.size - 1)
+      return (minNumber, maxNumber)
+    }
+    //Output min and max values
+    println(minmax(sSorted))
 
   }
 
@@ -218,7 +231,31 @@ object Chapter4 {
      *  values less than v, equal to v, and greater than v.
      */
 
+    //Define Array
+    val s = Array(1, 4, 23, 65, 2, 50, 50, 32, 87,  66, 7)
+    //V
+    val v = 50
 
+
+    //Function that takes an Array and an int; and returns the
+    //number of values in the Array greater, less and equal to the int
+    def minmax(values: Array[Int], v: Int) : (Int, Int, Int) = {
+      var lessV = 0
+      var greaterV = 0
+      var equalV = 0
+
+      for(i <- 0 until values.size)
+        if (values(i) == v)
+          equalV += 1
+        else if (values(i) < v)
+          lessV += 1
+        else if (values(i) > v)
+          greaterV += 1
+
+      return (lessV, equalV, greaterV)
+    }
+    //Output min and max values
+    println(minmax(s, v))
 
   }
 
@@ -228,7 +265,8 @@ object Chapter4 {
      *  Come up w a plausible use case.
      */
 
-
+     //ANS:  The two strings are concatinated together.  Zip is used to map two lists
+     //together to form a new list. .
 
   }
 
