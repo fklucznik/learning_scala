@@ -1,28 +1,26 @@
 /**
- * Created by frank on 2/17/15.
+ * Write a class time
+ * Read-only properties hours and minutes
+ * method before(other: Time): Boolean that checks for this time before the other
+ * Time object constructed as new Time(hrs, min)
+ * hrs is military time between 0 and 23
  */
 object Class2 extends App {
 
-  class BankAccount {
-    private var balance: Double = 0.00 // Must initialize the field
+  class time (val hrs: Int, val min: Int){
+    def before(other: time): Boolean =
+      //Is "other" time before this time
+      if (other.hrs < hrs || other.hrs == hrs && other.min < min) true else false
 
-    def deposit(input: Double) {
-      balance += input
-      println("Your deposit was was processed and your new balance is $" + f"$balance%1.2f")
-    }
-
-    def withdrawal(input: Double) {
-      balance -= input
-      println("Your withdrawal was processed and your new balance is $" + f"$balance%1.2f")
-    }
-
-    def myBalance() {println("Your balance is $" + f"$balance%1.2f")}
   }
 
-  val myBank = new BankAccount
 
-  //println(myBank.myBalance)
-  myBank.deposit(100.00)
-  myBank.withdrawal(34.23)
-  myBank.myBalance
+  val myTime = new time(scala.util.Random.nextInt(23), scala.util.Random.nextInt(60))
+
+  val yourTime = new time(scala.util.Random.nextInt(23), scala.util.Random.nextInt(60))
+
+  println("MyTime" + myTime.hrs + ":" + myTime.min)
+  println("YourTime" + yourTime.hrs + ":" + yourTime.min)
+  println("Is YourTime before MyTime?  " + myTime.before(yourTime))
+
 }

@@ -5,11 +5,11 @@ import scala.util.Random
  */
 object Random0 extends App {
 
-  var myLong = Random.nextLong
+  var myLong = scala.util.Random.nextLong
   var myBigInt: BigInt = myLong
 
   val myString = myBigInt.toString(36)
 
-  println(myString)
+  println(myBigInt)
 
 }

@@ -68,20 +68,49 @@ object Chapter5 {
   }
 
   def question3():Unit = {
-    /**
-     *
-     */
+/**
+ * Write a class time
+ * Read-only properties hours and minutes
+ * method before(other: Time): Boolean that checks for this time before the other
+ * Time object constructed as new Time(hrs, min)
+ * hrs is military time between 0 and 23
+ */
 
 
+  class time (val hrs: Int, val min: Int){
+    def before(other: time): Boolean =
+      if (other.hrs < hrs || other.hrs == hrs && other.min < min) true else false
+  }
+
+  val myTime = new time(10, 32)
+  val yourTime = new time(10, 31)
+
+  println("MyTime" + myTime.hrs + ":" + myTime.min)
+  println("YourTime" + yourTime.hrs + ":" + yourTime.min)
+  println("Is YourTime before MyTime?  " + myTime.before(yourTime))
 
   }
 
 
   def question4():Unit = {
     /**
-     *
+     *Reimplement Time class:  Hours 0-23 and mins 0-60.
      */
+    class time (val hrs: Int, val min: Int){
+      def before(other: time): Boolean =
+      //Is "other" time before this time
+        if (other.hrs < hrs || other.hrs == hrs && other.min < min) true else false
 
+    }
+
+
+    val myTime = new time(scala.util.Random.nextInt(23), scala.util.Random.nextInt(60))
+
+    val yourTime = new time(scala.util.Random.nextInt(23), scala.util.Random.nextInt(60))
+
+    println("MyTime" + myTime.hrs + ":" + myTime.min)
+    println("YourTime" + yourTime.hrs + ":" + yourTime.min)
+    println("Is YourTime before MyTime?  " + myTime.before(yourTime))
 
 
   }
