@@ -172,10 +172,20 @@ object Chapter5 {
 
   def question7():Unit = {
     /**
-     *
+     * Create person class that takes a Fname Lname string, and break string into two parts.
      */
+    class Person(private var privateName: String ) {
 
+      val splitName = privateName.split(" ").array
 
+      def firstName = splitName(0)
+
+      def lastName = splitName(1)
+    }
+
+    val dick = new Person("Mike Sanders")
+
+    println(dick.firstName + " " + dick.lastName)
 
   }
 
