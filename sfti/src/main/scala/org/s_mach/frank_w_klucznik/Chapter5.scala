@@ -117,19 +117,56 @@ object Chapter5 {
 
   def question5():Unit = {
     /**
-     *
+     * Create student class w/ ID and Name.  Demonstrate Java Bean options.
+     * This option is useful for use with Java tools that expect Java methods
      */
 
+    class student (@scala.beans.BeanProperty var name: String, @scala.beans.BeanProperty var id: Long){
+      println("New student class created with name and id")
+    }
 
+    //Generate new student class to test
+    val myStudent = new student("Jimmy Fallen", 1234567890)
+
+    //Demonstrate scala getter
+    println("Scala getter " + myStudent.name + "  " + myStudent.id)
+
+    //Demonstrate scala setter
+    myStudent.name_=("Sammy Smith")
+    myStudent.id_=(9999999999L)
+    println("After update with scala setter " + myStudent.name + "  " + myStudent.id)
+
+    //Demonstrate JavaBeans getter
+    println("JB getter " + myStudent.getName() + "  " + myStudent.getId())
+
+    //Demonstrate JB setter
+    myStudent.setName("Katy Smith")
+    myStudent.setId(111111111L)
+    println("After update with JB setter " + myStudent.name + "  " + myStudent.id)
 
   }
 
   def question6():Unit = {
     /**
-     *
+     *Primary constructor turns negative ages into 0.
      */
+    class Person(private var privateAge: Int = -3 ) {
+      if (privateAge < 0) privateAge = 0
 
+      def age = privateAge
 
+      def age_=(newValue: Int) {
+        if (newValue > privateAge) privateAge = newValue
+      }
+    }
+
+    val dick = new Person
+
+    println(dick.age)
+
+    dick.age = 5
+
+    println(dick.age)
 
   }
 
